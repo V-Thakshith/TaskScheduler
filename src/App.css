@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+html, body{
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;  
+}
+
+.box{
+  overflow-x: hidden;
+  overflow: scroll;
+  max-height: 750px;
+  border-radius: 10px;
+  padding: 30px;
+  display: grid;
+  place-items: center;
+  border: 3px solid black;
+  height: max-content;
+  width: max-content;
+}
+
+.box:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.create-box{
+  border-radius: 10px;
+  row-gap: 20%;
+  padding: 50px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  place-items: left;
+  height: max-content;
+  width: max-content;
+}
+
+.btn-add-tasks{
+  font-size: 20px !important;
+  margin: 10px;
+  width: 300px;
+  color: aqua;
+}
+
+.create-event-input{
+  height: 40px;
+  width: 300px;
+  border: 2px solid black ;
+  border-radius: 5px;
+}
+
+.back-btn-class{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 5%
+}
+
+.back-btn{
+  cursor: pointer;
+  color: black;
+}
+
+.add-btn-div{
+  width: 100%;
+  margin: 15px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.add-tasks-btn{
+  font-size: 20px !important;
+  margin: 10px;
+  width: 300px;
+  color: aqua;
+}
+
+.card{
   color: white;
+  background: #dc3545;
+  width: 300px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 3px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.close-btn-pos{
+  text-align: right;
+  cursor:pointer
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover{
+  background-color: #dc0f23 !important;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border: 1px solid black;
 }
