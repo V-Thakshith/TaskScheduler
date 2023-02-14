@@ -4,12 +4,12 @@ import { TiArrowBackOutline } from "react-icons/ti";
 import { Link,useNavigate } from "react-router-dom";
 import { useGlobleContext } from "../context";
 
-const CreateTask=()=>{
+const UpdateTask=()=>{
     const navigate=useNavigate()
-    const {addToTasks}=useGlobleContext()
-    const [eventName,setEventName]=useState('')
-    const [eventDate,setEventDate]=useState('')
-    const [eventTime,setEventTime]=useState('')
+    const {addToTasks,task}=useGlobleContext()
+    const [eventName,setEventName]=useState(task.eventName)
+    const [eventDate,setEventDate]=useState(task.eventDate)
+    const [eventTime,setEventTime]=useState(task.eventTime)
 
     const handleNameChange=(e)=>{ 
         setEventName(e.target.value)
@@ -24,13 +24,8 @@ const CreateTask=()=>{
     }
 
     const handleSubmit=()=>{
-        if (eventName.trim().length !== 0 && eventDate.trim().length !== 0 && eventTime.trim().length !== 0) {
-            addToTasks(eventName,eventDate,eventTime)
-            navigate("/")
-          } else {
-            alert("Enter the values")
-          }
-        
+        addToTasks(eventName,eventDate,eventTime)
+        navigate("/")
     }
 
     return(
@@ -45,10 +40,10 @@ const CreateTask=()=>{
                 <h3>Event Time:  </h3> <input type="time" value={eventTime} onChange={handleTimeChange} className="create-event-input" required></input>
                 </div>
                 <div className="add-btn-div">
-                <Button type="submit" className="btn-add-tasks" variant="danger">Create Task</Button>
+                <Button type="submit" className="btn-add-tasks" variant="danger">Save Task</Button>
                 </div>
                 </form>
             </div>
     )
 }
-export default CreateTask
+export default UpdateTask

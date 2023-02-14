@@ -11,8 +11,7 @@ html, body{
 }
 
 .box{
-  overflow-x: hidden;
-  overflow: scroll;
+  overflow-y: scroll;
   max-height: 750px;
   border-radius: 10px;
   padding: 30px;
@@ -29,13 +28,33 @@ html, body{
 .create-box{
   border-radius: 10px;
   row-gap: 20%;
-  padding: 50px;
+  padding: 30px;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
   place-items: left;
   height: max-content;
   width: max-content;
+}
+
+@media screen and (max-width:776px) {
+  .create-box{
+    grid-template-columns:1fr;
+    row-gap: 5%;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .create-box{
+    grid-template-columns:1fr;
+    row-gap: 5%;
+    padding: 20px;
+  }
+
+  .create-event-input{
+    width: 150px;
+  }
 }
 
 .btn-add-tasks{
@@ -82,6 +101,7 @@ html, body{
   color: white;
   background: #dc3545;
   width: 300px;
+  height: 400px;
   padding: 20px;
   margin-bottom: 10px;
   border: 3px solid black;
@@ -96,4 +116,17 @@ html, body{
   background-color: #dc0f23 !important;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border: 1px solid black;
+}
+
+.two-btn-pos{
+  display: flex;
+  justify-content: right;
+}
+
+.sort-date-input{
+  margin: 10px;
+  width: 250px;
+  border: 2px solid black ;
+  border-radius: 5px;
+  padding: 2px;
 }
